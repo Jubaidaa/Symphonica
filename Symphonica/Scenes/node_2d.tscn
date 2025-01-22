@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4hc346bw2h1k"]
+
+[ext_resource type="Texture2D" uid="uid://c08c6p4uq6dfv" path="res://Assets/SFState_Logo_H_rgb_2in.png" id="1_vsarx"]
+[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="2_jaf2u"]
+[ext_resource type="Texture2D" uid="uid://c2bax3ffoy72m" path="res://Assets/momoi-has-an-interesting-valentines-day-treat-by-blue-sechi-v0-6r0yn3mbbmic1.webp" id="3_ae0l0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxb22"]
+size = Vector2(1148, 297)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8e8e"]
+size = Vector2(121, 115.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(204, 531)
+texture = ExtResource("1_vsarx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(1, -2)
+shape = SubResource("RectangleShape2D_oxb22")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1148, 423)
+texture = ExtResource("1_vsarx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+position = Vector2(1, -3)
+shape = SubResource("RectangleShape2D_oxb22")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_jaf2u")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-275, 238.5)
+scale = Vector2(0.1725, 0.17625)
+texture = ExtResource("3_ae0l0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-276.5, 239.25)
+shape = SubResource("RectangleShape2D_d8e8e")
